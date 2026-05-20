@@ -156,7 +156,7 @@ export const App: React.FC = () => {
         <section className="todoapp__main" data-cy="TodoList">
           <TransitionGroup>
             {filteredTodos.map(todo => (
-              <CSSTransition key={todo.id} timeout={300} classNames="item">
+              <CSSTransition key={todo.id} timeout={0} classNames="item">
                 <TodoItem
                   todo={todo}
                   onDelete={handleDeleteTodo}
@@ -167,7 +167,7 @@ export const App: React.FC = () => {
             {tempTodo && (
               <CSSTransition
                 key={tempTodo.id}
-                timeout={300}
+                timeout={0}
                 classNames="temp-item"
               >
                 <TodoItem todo={tempTodo} loader={true} onDelete={() => {}} />
